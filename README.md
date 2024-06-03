@@ -1,6 +1,6 @@
 # vite-template
 
-A 'project_name' built as part of <a href="">The Odin Project curriculum</a>
+`Project name` built as part of <a href="">The Odin Project curriculum</a>
 
 ## Setup
 
