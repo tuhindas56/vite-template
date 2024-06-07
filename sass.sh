@@ -21,9 +21,16 @@ echo "Updating prettier configuration.."
 sed '5d' .prettierrc > temp
 rm .prettierrc
 cat temp > .prettierrc && rm temp
+echo "Updating vite configuration..."
+current=`pwd`
+name=`basename "$current"`
+sed "s/repo-name/$name/" > temp
+rm vite.config.ts
+cat temp > vite.config.ts && rm temp
 echo "Finishing up.."
 npx prettier .prettierrc --write
 npx prettier postcss.config.js --write
+npx prettier vite.config.ts --write
 clear
 echo "Project setup successful!"
 rm sass.sh
