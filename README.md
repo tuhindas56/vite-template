@@ -1,6 +1,6 @@
 # vite-template
 
-`Project name` built as part of <a href="">The Odin Project curriculum</a>
+`Project name` 
 
 ## Setup
 
@@ -8,15 +8,12 @@
 - Start server: `npm run dev`
 - Build: `npm run build`
 
-### Note
+## Notes
 
-- To remove TailwindCSS and use Sass:
+- To remove TailwindCSS and setup Sass, navigate to the repository folder and run the `sass.sh` script in your terminal:
 
-  1. Run `npm remove tailwindcss @tailwindcss/forms autoprefixer postcss prettier-plugin-tailwindcss && rm src/style.css src/main.ts tailwind.config.js postcss.config.js && npm i -D sass && touch src/styles.scss && echo import "'./styles.scss'" > src/main.ts`
-  2. Update **.prettierrc**:
-
-     ```
-     - "plugins": ["prettier-plugin-tailwindcss"]
-     ```
+  ```
+  ./sass.sh
+  ```
 
 - Allow read and write permissions for GitHub Actions to work!
