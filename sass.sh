@@ -24,7 +24,7 @@ cat temp > .prettierrc && rm temp
 echo "Updating vite configuration..."
 current=`pwd`
 name=`basename "$current"`
-sed "s/repo-name/$name/" > temp
+sed "s/repo-name/$name/" vite.config.ts > temp
 rm vite.config.ts
 cat temp > vite.config.ts && rm temp
 echo "Finishing up.."
