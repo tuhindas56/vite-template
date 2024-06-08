@@ -4,7 +4,7 @@ npm remove tailwindcss @tailwindcss/forms prettier-plugin-tailwindcss
 rm src/style.css src/main.ts tailwind.config.js
 clear
 echo "Installing Sass.."
-npm i -D sass
+npm i -D sass @fullhuman/postcss-purgecss
 clear
 echo "Creating src/scss folder.."
 mkdir src/scss
@@ -14,9 +14,8 @@ echo "@use 'base';" > src/scss/main.scss
 echo "Adding import for main.scss to main.ts.."
 echo "import './scss/main.scss'" > src/main.ts
 echo "Updating postcss configuration.."
-sed '3d' postcss.config.js > temp
 rm postcss.config.js
-cat temp > postcss.config.js && rm temp
+echo "const purgecss = require('@fullhuman/postcss-purgecss');module.exports = { plugins: [require('autoprefixer'), purgecss({ content: ['./**/*.html', './src/**/*.ts'] })], }" > postcss.config.js
 echo "Updating prettier configuration.."
 sed '5d' .prettierrc > temp
 rm .prettierrc
